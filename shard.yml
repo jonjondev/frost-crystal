@@ -1,0 +1,13 @@
+name: frost-crystal
+version: 0.1.0
+
+authors:
+  - Jonathan Moallem <jdmoallem@gmail.com>
+
+targets:
+  frost-crystal:
+    main: src/frost-crystal.cr
+
+crystal: 0.24.2
+
+license: MIT
