@@ -4,7 +4,8 @@ require "json"
 
 # File Requirements
 require "./middleware/*"
-require "./helpers/*"
+require "./extension/*"
+require "./helper/*"
 require "./api/base_api"
 require "./api/*"
 
@@ -14,7 +15,7 @@ include ApplicationHelper
 # Register Middlewares
 register_middleware [ApiHandler]
 
-# Main App Module
+# Main App Module (run on start)
 module Frost::Crystal
   VERSION = "0.1.0"
   Kemal.run

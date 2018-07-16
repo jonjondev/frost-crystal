@@ -1,10 +1,10 @@
 class ExampleApi < BaseApi
-  extend ApiHelper
+  extend Routable
 
   @@namespace = "/example"
 
   before_all do |env|
-    set_json_content env
+    ApiHelper.set_json_content(env)
   end
 
   get route("/hi") do |env|

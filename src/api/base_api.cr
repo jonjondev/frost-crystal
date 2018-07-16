@@ -1,4 +1,6 @@
 class BaseApi
+  include ApiHelper
+
   def self.base_route(route : String)
     "/api" + route
   end
