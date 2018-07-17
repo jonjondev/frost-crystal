@@ -1,6 +1,12 @@
-# frost-crystal
+<p align="center">
+  <img src="https://i.imgur.com/Q2R4xgL.png" width="65%">
+</p>
 
-TODO: Write a description here
+# Frost Crystal: The coolest Crystal API framework
+
+Frost Crystal is a barebones [Kemal](http://kemalcr.com) API framework with modular boilerplates... and it's super cool.
+
+Its structure has been built out to be naturally quite opinionated. That being said however, the project's logic is easy enough to follow and can easily be modified to suit your needs.
 
 ## Installation
 
@@ -16,7 +22,7 @@ TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it ( https://github.com/[your-github-name]/frost-crystal/fork )
+1. Fork it from [here](https://github.com/J-Mo63/frost-crystal/fork)
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -24,4 +30,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [[your-github-name]](https://github.com/[your-github-name]) Jonathan Moallem - creator, maintainer
+- [J-Mo63](https://github.com/J-Mo63) Jonathan Moallem - creator, maintainer
