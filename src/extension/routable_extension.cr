@@ -1,6 +1,5 @@
 module Routable
   def route(route : String)
-    puts base_route(@@namespace + route)
     base_route(@@namespace + route)
   end
 
