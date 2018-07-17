@@ -18,5 +18,8 @@ register_middleware [ApiHandler]
 # Main App Module (run on start)
 module Frost::Crystal
   VERSION = "0.1.0"
+
+  serve_static false
+
   Kemal.run
 end
