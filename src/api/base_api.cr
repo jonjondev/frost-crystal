@@ -1,7 +1,7 @@
 class BaseApi
   include ApiHelper
 
-  def self.base_route(route : String)
+  def self.route(route : String)
     "/api" + route
   end
 
@@ -9,7 +9,7 @@ class BaseApi
     ApiHelper.set_json_content env
   end
 
-  get base_route("/") do |env|
+  get route("/") do |env|
     {greeting: "Hello World!"}.to_json
   end
 
