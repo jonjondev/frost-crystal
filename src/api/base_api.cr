@@ -1,4 +1,5 @@
 class BaseApi
+  extend Formattable
   include ApiHelper
 
   def self.route(route : String)
@@ -6,7 +7,7 @@ class BaseApi
   end
 
   before_all do |env|
-    ApiHelper.set_json_content env
+    format_json env
   end
 
   get route("/") do |env|
@@ -14,12 +15,12 @@ class BaseApi
   end
 
   error 404 do |env|
-    ApiHelper.set_json_content env
+    format_json env
     {error: "Resource not found"}.to_json
   end
 
   error 403 do |env|
-    ApiHelper.set_json_content env
+    format_json env
     {error: "Cannot authenticate request"}.to_json
   end
 end
