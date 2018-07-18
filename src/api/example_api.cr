@@ -1,9 +1,24 @@
-class ExampleApi < BaseApi
-  extend Routable
+class ExampleApi
+  include Frost::ApiHelper
 
-  @@namespace = "/example"
+  def index
+    respond({route: "index"}.to_json)
+  end
 
-  get route("/hi") do |env|
-    {greeting: "Hello, this is the example API module!"}.to_json
+  def create
+    respond({route: "create"}.to_json)
+  end
+
+  def show
+    id = param("id").to_i
+    respond({route: "show", id: id}.to_json)
+  end
+
+  def update
+    respond({route: "update"}.to_json)
+  end
+
+  def destroy
+    respond({route: "destroy"}.to_json)
   end
 end

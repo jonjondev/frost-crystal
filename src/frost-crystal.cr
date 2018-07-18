@@ -1,25 +1,25 @@
 # Library Requirements
-require "kemal"
+require "orion"
 require "json"
+require "granite/adapter/pg"
 
 # File Requirements
-require "./middleware/*"
-require "./extension/*"
+require "./routes"
+require "./model/*"
+require "./handler/*"
 require "./helper/*"
-require "./api/base_api"
 require "./api/*"
 
 # Includes
-include ApplicationHelper
+include Frost::ModelHelper
+include Frost::ServerHelper
 
-# Register Middlewares
-register_middleware [ApiHandler]
+# Migrate DB
+initialise_tables [User]
 
 # Main App Module (run on start)
-module Frost::Crystal
+module Frost::Main
   VERSION = "0.1.0"
 
-  serve_static false
-
-  Kemal.run
+  start_server on: 3000
 end
