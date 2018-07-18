@@ -1,3 +1,6 @@
+# Version Number
+VERSION = "0.1.0"
+
 # Library Requirements
 require "orion"
 require "json"
@@ -17,9 +20,5 @@ include Frost::ServerHelper
 # Migrate DB
 initialise_tables [User]
 
-# Main App Module (run on start)
-module Frost::Main
-  VERSION = "0.1.0"
-
-  start_server on: 3000
-end
+# Start Server
+start_server on: 3000

@@ -5,6 +5,7 @@ module Frost::ServerHelper
   end
 
   private def start_message(port : Int32)
+    puts "Running app version #{VERSION}"
     puts "Frost is listening at http://0.0.0.0:#{port}..."
     puts "--------------------------------------------"
   end
