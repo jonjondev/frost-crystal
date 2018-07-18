@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://i.imgur.com/Q2R4xgL.png" width="65%">
+  <img src="https://i.imgur.com/74RCHjv.png" width="65%">
 </p>
 
 # Frost Crystal: The coolest Crystal API framework
 
-Frost Crystal is a barebones [Kemal](http://kemalcr.com) API framework with modular boilerplates... and it's super cool.
+Frost Crystal is a barebones, modular API framework build with [Crystal](https://crystal-lang.org)... and it's super cool.
 
 Its structure has been built out to be naturally quite opinionated. That being said however, the project's logic is easy enough to follow and can easily be modified to suit your needs.
 
