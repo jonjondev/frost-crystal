@@ -4,10 +4,6 @@ shards:
     github: crystal-lang/crystal-db
     version: 0.5.0
 
-  granite:
-    github: amberframework/granite
-    version: 0.12.1
-
   inflector:
     github: phoffer/inflector.cr
     version: 0.1.8
@@ -27,4 +23,12 @@ shards:
   pg:
     github: will/crystal-pg
     version: 0.15.0
+
+  singleton:
+    github: topaz-crystal/crystal-singleton
+    version: 0.0.3
+
+  topaz:
+    github: topaz-crystal/topaz
+    version: 0.2.7
 

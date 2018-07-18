@@ -15,7 +15,7 @@ license: MIT
 dependencies:
   orion:
     github: obsidian/orion
-  granite:
-    github: amberframework/granite
+  topaz:
+    github: topaz-crystal/topaz
   pg:
     github: will/crystal-pg

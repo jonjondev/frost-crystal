@@ -2,23 +2,34 @@ class ExampleApi
   include Frost::ApiHelper
 
   def index
-    respond({route: "index"}.to_json)
-  end
-
-  def create
-    respond({route: "create"}.to_json)
+    respond Example.all
   end
 
   def show
-    id = param("id").to_i
-    respond({route: "show", id: id}.to_json)
+    respond load_example
+  end
+
+  def create
+    body = fetch_body
+    example = Example.create(name: param(body, "name"), description: param(body, "description"))
+    respond example
   end
 
   def update
-    respond({route: "update"}.to_json)
+    body = fetch_body
+    example = load_example
+    example.name = param(body, "name") if param(body, "name")
+    example.description = param(body, "description") if param(body, "description")
+    example.update
+    respond example
   end
 
   def destroy
-    respond({route: "destroy"}.to_json)
+    example = load_example
+    example.delete
+  end
+
+  private def load_example : Example
+    Example.get(param("id").to_i)
   end
 end
