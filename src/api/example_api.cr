@@ -10,16 +10,15 @@ class ExampleApi
   end
 
   def create
-    body = fetch_body
-    example = Example.create(name: param(body, "name"), description: param(body, "description"))
+    example = Example.create(name: body("name"), description: body("description"))
     respond example
   end
 
   def update
     body = fetch_body
     example = load_example
-    example.name = param(body, "name") if param(body, "name")
-    example.description = param(body, "description") if param(body, "description")
+    example.name = body("name") if body("name")
+    example.description = body("description") if body("description")
     example.update
     respond example
   end
