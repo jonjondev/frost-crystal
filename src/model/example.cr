@@ -1,8 +1,13 @@
-class Example < Topaz::Model
-  extend Frost::OrmWrapper
+class Example < Granite::Base
+  extend Granite::Query::BuilderMethods
 
-  columns(
-    name: String,
-    description: String
-  )
+  adapter pg
+
+  # Fields
+  timestamps
+  primary id : Int64
+  field name : String
+  field body : String
+
+  # Object methods
 end

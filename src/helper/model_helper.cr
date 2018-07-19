@@ -1,10 +1,10 @@
 module Frost::ModelHelper
-  def initialise_tables(models : Array(Topaz::Model.class))
+  def initialise_tables(models : Array(Granite::Base.class))
     puts "Initialising tables..."
     tables_existed = 0
     models.each do |model|
       begin
-        model.create_table
+        model.migrator.create
         puts "#{model} table created"
       rescue
         tables_existed += 1

@@ -4,10 +4,7 @@ VERSION = "0.1.0"
 # Library Requirements
 require "orion"
 require "json"
-require "topaz"
-require "pg"
-
-Topaz::Db.setup("postgres://frost:frost@localhost:5432/frost")
+require "granite/adapter/pg"
 
 # File Requirements
 require "./routes"
@@ -22,7 +19,7 @@ include Frost::ModelHelper
 include Frost::ServerHelper
 
 # Migrate DB
-initialise_tables [Example]
+initialise_tables [User, Example]
 
 # Start Server
 start_server on: 3000
