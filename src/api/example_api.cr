@@ -3,7 +3,7 @@ class ExampleApi
 
   def index
     Example.create(name: "Test", body: "Data")
-    respond Example.all
+    # respond Example.all
   end
 
   def show
