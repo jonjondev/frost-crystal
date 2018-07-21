@@ -1,5 +1,4 @@
 class User < Granite::Base
-  extend Granite::Query::BuilderMethods
   adapter pg
 
   # Fields

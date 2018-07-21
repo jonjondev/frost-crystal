@@ -8,7 +8,6 @@ require "granite/adapter/pg"
 
 # File Requirements
 require "./routes"
-require "./utils/*"
 require "./model/*"
 require "./handler/*"
 require "./helper/*"
