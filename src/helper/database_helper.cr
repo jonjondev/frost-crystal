@@ -1,4 +1,4 @@
-module Frost::ModelHelper
+module Frost::DatabaseHelper
   def initialise_tables(models : Array(Granite::Base.class))
     puts "Initialising tables..."
     tables_existed = 0

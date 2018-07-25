@@ -13,8 +13,8 @@ crystal: 0.25.1
 license: MIT
 
 dependencies:
-  orion:
-    github: obsidian/orion
+  toro:
+    github: soveran/toro
   granite:
     github: amberframework/granite
     version: ~> 0.12.1

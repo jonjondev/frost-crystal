@@ -1,9 +1,10 @@
-class ExampleApi
+class ExampleApi < Toro::Router
+  include Frost::CrudRoutes
   include Frost::ApiHelper
 
   def index
-    Example.create(name: "Test", body: "Data")
-    # respond Example.all
+    # Example.create(name: "Test", body: "Data")
+    json Example.all
   end
 
   def show

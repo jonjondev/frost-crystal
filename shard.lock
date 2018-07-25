@@ -8,23 +8,15 @@ shards:
     github: amberframework/granite
     version: 0.12.1
 
-  inflector:
-    github: phoffer/inflector.cr
-    version: 0.1.8
-
-  mime-types:
-    github: jwaldrip/mime-types-cr
-    version: 1.3.0
-
-  oak:
-    github: obsidian/oak
-    version: 2.0.1
-
-  orion:
-    github: obsidian/orion
-    version: 1.5.0
-
   pg:
     github: will/crystal-pg
     version: 0.15.0
+
+  seg:
+    github: soveran/seg
+    commit: 82e39885ae67a270c0e0830a842936990a77563e
+
+  toro:
+    github: soveran/toro
+    version: 0.4.1
 
