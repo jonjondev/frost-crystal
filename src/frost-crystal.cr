@@ -16,7 +16,7 @@ require "./api/*"
 include Frost::DatabaseHelper
 include Frost::ServerHelper
 
-# Migrate DB
+# Setup DB
 initialise_tables [User, Example]
 
 # Start Server

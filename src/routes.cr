@@ -1,3 +1,4 @@
+# The base routes defiition class
 class FrostApp < Toro::Router
   def routes
     on "api" do

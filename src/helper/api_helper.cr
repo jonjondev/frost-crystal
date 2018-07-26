@@ -10,7 +10,7 @@ module Frost::ApiHelper
     begin
       @body.not_nil![param].to_s
     rescue KeyError
-      puts "Unknown param #{param}"
+      puts "Could not find param #{param}"
     rescue error : Exception
       puts "Found empty request body: #{error.message}"
     end
