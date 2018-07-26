@@ -1,36 +1,54 @@
 class ExampleApi < Toro::Router
-  include Frost::CrudRoutes
   include Frost::ApiHelper
 
+  # Route Methods
+
   def index
-    # Example.create(name: "Test", body: "Data")
-    json Example.all
+    Example.all
   end
 
   def show
-    # respond load_example
+    load_example
   end
 
   def create
-    # example = Example.create(name: body("name"), description: body("description"))
-    # respond example
+    Example.create(
+      name: body("name")
+    )
   end
 
   def update
-    # body = fetch_body
-    # example = load_example
-    # example.name = body("name") if body("name")
-    # example.description = body("description") if body("description")
-    # example.update
-    # respond example
+    if example = load_example
+      example.name = body("name") || example.name
+      example.save
+    else
+      {error: "Example not found"}
+    end
   end
 
   def destroy
-    # example = load_example
-    # example.delete
+    if example = load_example
+      example.destroy
+    else
+      {error: "Example not found"}
+    end
   end
 
-  private def load_example : Example
-    # Example.get(param("id").to_i)
+  # Helper Methods
+
+  def load_example : Example | Nil
+    Example.find(param(:id))
+  end
+
+  # Routes Definition
+  def routes
+    get { json index }
+    post { json create }
+    on :id do
+      # on "another" { json load_another(show.id) }
+      get { json show }
+      put { update }
+      delete { json destroy }
+    end
   end
 end
