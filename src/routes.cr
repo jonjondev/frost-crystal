@@ -5,6 +5,9 @@ class FrostApp < Toro::Router
       on "example" do
         mount ExampleApi
       end
+      on "user" do
+        mount UserApi
+      end
     end
   end
 end
