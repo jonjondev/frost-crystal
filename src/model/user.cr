@@ -1,6 +1,9 @@
 class User < Granite::Base
   adapter pg
 
+  # Relationships
+  has_many :examples
+
   # Fields
   timestamps
   primary id : Int64
