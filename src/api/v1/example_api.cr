@@ -1,5 +1,6 @@
-class ExampleApi < Toro::Router
+class V1::ExampleApi < Toro::Router
   include Frost::ApiHelper
+  include Frost::SessionHelper
 
   # Route Methods
 
@@ -61,13 +62,16 @@ class ExampleApi < Toro::Router
 
   # Route Definitions
   def routes
-    get { json index }
-    post { json create }
-    on :id do
-      on "user" { json load_user(show) }
-      get { json show }
-      put { json update }
-      delete { json destroy }
+    if token_authenticate(header("AUTH_TOKEN"))
+      get { json index }
+      post { json create }
+      on :id do
+        on "user" { json load_user(show) }
+        get { json show }
+        put { json update }
+        delete { json destroy }
+      end
     end
+    json({error: "Missing or invalid auth-token"})
   end
 end

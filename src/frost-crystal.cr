@@ -10,7 +10,7 @@ require "granite/adapter/pg"
 require "./routes"
 require "./model/*"
 require "./helper/*"
-require "./api/*"
+require "./api/**"
 
 # Includes
 include Frost::DatabaseHelper

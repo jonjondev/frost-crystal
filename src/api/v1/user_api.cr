@@ -1,4 +1,4 @@
-class UserApi < Toro::Router
+class V1::UserApi < Toro::Router
   include Frost::ApiHelper
 
   # Route Methods
@@ -52,7 +52,7 @@ class UserApi < Toro::Router
     user.first_name = body("first_name") || user.first_name
     user.last_name = body("last_name") || user.last_name
     user.email = body("email") || user.email
-    user.password_hash = body("password_hash") || user.password_hash
+    user.password = body("password") || user.password_hash
     return user
   end
 
