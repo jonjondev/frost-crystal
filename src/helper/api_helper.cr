@@ -16,6 +16,13 @@ module Frost::ApiHelper
     end
   end
 
+  # Converts a string value into the ID format (Int64)
+  def as_id(string_id) : Int64 | Nil
+    if value = string_id
+      Int64.new(value)
+    end
+  end
+
   # Fetches and parses the request body as JSON
   private def fetch_body
     begin

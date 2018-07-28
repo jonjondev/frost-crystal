@@ -42,6 +42,7 @@ class ExampleApi < Toro::Router
   def populate_example(example : Example) : Example
     example.name = body("name") || example.name
     example.description = body("description") || example.description
+    example.user_id = as_id(body("user_id")) || example.user_id
     return example
   end
 
