@@ -33,6 +33,15 @@ class UserApi < Toro::Router
     end
   end
 
+  # Association Methods
+
+  def load_examples(fetched_user)
+    if user = fetched_user
+      return user.examples
+    end
+    return fetched_user
+  end
+
   # Helper Methods
 
   def load_user : User | Nil
@@ -56,7 +65,7 @@ class UserApi < Toro::Router
     get { json index }
     post { json create }
     on :id do
-      # on "examples" { json load_examples(show.id) }
+      on "examples" { json load_examples(show) }
       get { json show }
       put { json update }
       delete { json destroy }
