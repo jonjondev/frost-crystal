@@ -1,3 +1,5 @@
+require "crypto/bcrypt/password"
+
 class User < Granite::Base
   adapter pg
 
@@ -15,5 +17,17 @@ class User < Granite::Base
   # Object methods
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def password=(new_password)
+    if password = new_password
+      self.password_hash = Crypto::Bcrypt::Password.create(password).to_s
+    end
+  end
+
+  def password
+    if hash = self.password_hash
+      Crypto::Bcrypt::Password.new(hash)
+    end
   end
 end

@@ -16,6 +16,15 @@ module Frost::ApiHelper
     end
   end
 
+  # Gets a param from the request body by name
+  def header(param) : String | Nil
+    begin
+      context.request.headers[param].to_s
+    rescue KeyError
+      puts "Could not find param #{param}"
+    end
+  end
+
   # Converts a string value into the ID format (Int64)
   def as_id(string_id) : Int64 | Nil
     if value = string_id

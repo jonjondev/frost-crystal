@@ -17,6 +17,7 @@ dependencies:
     github: soveran/toro
   granite:
     github: amberframework/granite
-    version: ~> 0.12.1
   pg:
     github: will/crystal-pg
+  redis:
+    github: stefanwille/crystal-redis

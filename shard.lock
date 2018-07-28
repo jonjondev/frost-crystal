@@ -12,6 +12,14 @@ shards:
     github: will/crystal-pg
     version: 0.15.0
 
+  pool:
+    github: ysbaddaden/pool
+    version: 0.2.3
+
+  redis:
+    github: stefanwille/crystal-redis
+    version: 2.0.0
+
   seg:
     github: soveran/seg
     commit: 82e39885ae67a270c0e0830a842936990a77563e
