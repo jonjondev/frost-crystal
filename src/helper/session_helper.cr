@@ -1,6 +1,13 @@
 require "redis"
 
 module Frost::SessionHelper
+  def authenticate!
+    if auth_header = header("Authorization")
+      token = auth_header.gsub("Bearer ", "")
+      token_authenticate(token)
+    end
+  end
+
   def token_authenticate(token)
     user_id = Redis.new.get(token)
     User.find(user_id)

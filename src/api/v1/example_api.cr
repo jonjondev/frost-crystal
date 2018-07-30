@@ -62,7 +62,7 @@ class V1::ExampleApi < Toro::Router
 
   # Route Definitions
   def routes
-    if token_authenticate(header("AUTH_TOKEN"))
+    if authenticate!
       get { json index }
       post { json create }
       on :id do
