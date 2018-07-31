@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe Frost::Crystal do
+describe Frost::App do
   # TODO: Write tests
 
   it "works" do

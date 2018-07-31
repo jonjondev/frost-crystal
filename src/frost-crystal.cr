@@ -12,12 +12,14 @@ require "./model/*"
 require "./helper/*"
 require "./api/**"
 
-# Includes
-include Frost::DatabaseHelper
-include Frost::ServerHelper
+module Frost::App
+  # Includes
+  extend Frost::DatabaseHelper
+  extend Frost::ServerHelper
 
-# Setup DB
-initialise_tables [User, Example]
+  # Setup DB
+  initialise_tables [User, Example]
 
-# Start Server
-start_server on: 3000
+  # Start Server
+  start_server on: 3000
+end
