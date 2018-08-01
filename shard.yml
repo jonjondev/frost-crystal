@@ -21,3 +21,7 @@ dependencies:
     github: will/crystal-pg
   redis:
     github: stefanwille/crystal-redis
+
+development_dependencies:
+  mass_spec:
+    github: c910335/mass-spec

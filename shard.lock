@@ -8,6 +8,10 @@ shards:
     github: amberframework/granite
     version: 0.12.1
 
+  mass_spec:
+    github: c910335/mass-spec
+    version: 0.2.1
+
   pg:
     github: will/crystal-pg
     version: 0.15.0
