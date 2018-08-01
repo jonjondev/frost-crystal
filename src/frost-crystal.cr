@@ -12,7 +12,7 @@ require "./model/*"
 require "./helper/*"
 require "./api/**"
 
-module Frost::App
+module Frost::Main
   # Includes
   extend Frost::DatabaseHelper
   extend Frost::ServerHelper
