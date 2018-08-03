@@ -1,10 +1,11 @@
 require "../../spec_helper"
+include Frost::SpecHelper
 
 describe V1::ExampleApi do
   # before_each do
   # end
 
-  pending "index route" do
+  describe "index route" do
     context "when unauthenticated" do
       get("/api/v1/example")
 
@@ -13,12 +14,15 @@ describe V1::ExampleApi do
       end
     end
     context "when authenticated" do
-      # TODO Add header
-      get("/api/v1/example")
+      if user = User.first
+        # Fix this
+        set_auth_header(user)
+        get("/api/v1/example")
 
-      it "successfully returns all examples" do
-        status_code.should eq(200)
-        body.should eq(Example.all.to_json)
+        it "successfully returns all examples" do
+          status_code.should eq(200)
+          body.should eq(Example.all.to_json)
+        end
       end
     end
   end
