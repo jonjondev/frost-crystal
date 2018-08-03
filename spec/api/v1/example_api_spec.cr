@@ -2,11 +2,6 @@ require "../../spec_helper"
 
 describe V1::ExampleApi do
   # before_each do
-  #   hash = BCrypt::Password.create("password")
-  #   User.create(first_name: "Test",
-  #     last_name: "User",
-  #     email: "test@user.com",
-  #     password_hash: hash)
   # end
 
   pending "index route" do
