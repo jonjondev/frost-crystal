@@ -9,6 +9,7 @@ describe V1::UserApi do
       body.should eq(User.all.to_json)
     end
   end
+
   describe "show route" do
     if user = User.first
       get("/api/v1/user/#{user.id}")
