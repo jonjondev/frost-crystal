@@ -13,6 +13,10 @@ class User < Granite::Base
   field last_name : String
   field email : String
   field password_hash : String
+  field role : Int32
+
+  # Callbacks
+  before_save :set_default_role
 
   # Object methods
   def full_name
@@ -29,5 +33,19 @@ class User < Granite::Base
     if hash = self.password_hash
       Crypto::Bcrypt::Password.new(hash)
     end
+  end
+
+  def admin?
+    self.role >= Role::Admin.to_i
+  end
+
+  private def set_default_role
+    self.role = Role::StandardUser.to_i unless self.role
+  end
+
+  enum Role
+    StandardUser
+    Admin
+    SuperAdmin
   end
 end
