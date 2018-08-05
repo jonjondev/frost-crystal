@@ -53,6 +53,7 @@ class V1::UserApi < Toro::Router
     user.last_name = body("last_name") || user.last_name
     user.email = body("email") || user.email
     user.password = body("password") || user.password_hash
+    user.role = int_body("role") || user.role
     return user
   end
 

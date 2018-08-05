@@ -16,6 +16,13 @@ module Frost::ApiHelper
     end
   end
 
+  # Gets a param from the request body by name as an Int32
+  def int_body(param) : Int32 | Nil
+    if param = body(param)
+      param.to_i
+    end
+  end
+
   # Gets a param from the request body by name
   def header(param) : String | Nil
     begin

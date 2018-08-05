@@ -36,11 +36,18 @@ class User < Granite::Base
   end
 
   def admin?
-    self.role >= Role::Admin.to_i
+    if role = self.role
+      role >= Role::Admin.to_i
+    end
   end
 
   private def set_default_role
-    self.role = Role::StandardUser.to_i unless self.role
+    self.role = User.default_role.to_i unless self.role
+  end
+
+  # Class Methods
+  def self.default_role
+    Role::StandardUser
   end
 
   enum Role
