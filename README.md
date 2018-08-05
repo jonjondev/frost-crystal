@@ -4,7 +4,7 @@
 
 # Frost Crystal: The coolest Crystal API framework
 
-Frost Crystal is a barebones, modular API framework build with [Crystal](https://crystal-lang.org)... and it's super cool.
+Frost Crystal is a barebones, modular API framework built with [Crystal](https://crystal-lang.org)... and it's super cool.
 
 Its structure has been built out to be naturally quite opinionated. That being said however, the project's logic is easy enough to follow and can easily be modified to suit your needs.
 
@@ -15,6 +15,27 @@ TODO: Write installation instructions here
 ## Usage
 
 TODO: Write usage instructions here
+
+## Project Structure
+
+```
+[root]
+     |-[config] <- Configuration files for the application database
+     |
+     |-[spec]
+     |      |-[api] <- Version-grouped test files suffixed with "_spec.cr"
+     |
+     |-[src]
+     |     |-[api] <- Version-grouped API controller route files suffixed with "_api.cr"
+     |     |
+     |     |-[helpers] <- Helper files suffixed with "_helper.cr"
+     |     |
+     |     |-[models] <- Model files
+     |
+     |-(Dockerfile) <- A dockerfile that can generate a runnable container for prod
+     |
+     |-(shard.yml) <- The Crystal-lang dependency list
+```
 
 ## Development
 
