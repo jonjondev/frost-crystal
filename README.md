@@ -4,15 +4,35 @@
 
 # Frost Crystal: The coolest Crystal API framework
 
-Frost Crystal is a **barebones, modular API framework built with [Crystal](https://crystal-lang.org)**... and it's super cool.
+Frost Crystal is a **barebones, modular API framework** built with [Crystal](https://crystal-lang.org)... and it's super cool.
 
 Its structure has been built out to be naturally quite opinionated. That being said however, the project's logic is easy enough to follow and **can easily be modified to suit your needs** as much of the logic can be found and modified in the helper files.
 
 The project utilizes [Toro](https://github.com/soveran/toro) for modular routing and [Granite](https://github.com/amberframework/granite) for substrate-independent persistence.
 
-TODO: Write installation instructions here
+## Getting Started
 
-## Usage
+Start by downloading this repository, note that you must have already have [Crystal](https://crystal-lang.org) installed to use it.
+
+Download dependencies with:
+
+```bash
+$ shards install
+```
+
+To get the project running at `localhost:3000` run:
+
+```bash
+$ crystal src/frost-crystal.cr
+```
+
+And you can test the project with:
+
+```bash
+$ crystal spec
+```
+
+## Examples
 
 TODO: Write usage instructions here
 
@@ -36,10 +56,6 @@ TODO: Write usage instructions here
      |
      |-(shard.yml) <- The Crystal-lang dependency list
 ```
-
-## Development
-
-TODO: Write development instructions here
 
 ## Contributing
 
