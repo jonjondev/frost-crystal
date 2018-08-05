@@ -8,7 +8,7 @@ module Frost::SessionHelper
     end
   end
 
-  def token_authenticate(token)
+  def token_authenticate(token) : User | Nil
     user_id = Redis.new.get(token)
     User.find(user_id)
   end
