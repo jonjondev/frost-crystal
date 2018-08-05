@@ -52,3 +52,7 @@ TODO: Write development instructions here
 ## Contributors
 
 - [J-Mo63](https://github.com/J-Mo63) Jonathan Moallem - creator, maintainer
+
+## License
+
+This project is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
