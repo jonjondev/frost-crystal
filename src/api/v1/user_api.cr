@@ -1,5 +1,12 @@
 class V1::UserApi < Toro::Router
   include Frost::ApiHelper
+  include Frost::SessionHelper
+
+  @current_user : User = User.new
+
+  def current_user=(user : User)
+    @current_user = user
+  end
 
   # Route Methods
 
@@ -64,7 +71,17 @@ class V1::UserApi < Toro::Router
   # Route Definitions
   def routes
     get { json index }
-    post { json create }
+    post do
+      if authenticate(self)
+        if @current_user.admin?
+          json create
+        else
+          json({error: "Insufficent permissions to perform action"})
+        end
+      else
+        json({error: "Missing or invalid auth-token"})
+      end
+    end
     on :id do
       on "examples" { json load_examples(show) }
       get { json show }

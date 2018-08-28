@@ -1,10 +1,16 @@
 require "redis"
 
 module Frost::SessionHelper
-  def authenticate!
+  def authenticate(context) : User | Nil
     if auth_header = header("Authorization")
       token = auth_header.gsub("Bearer ", "")
-      token_authenticate(token)
+      if user = token_authenticate(token)
+        if context.responds_to?(:current_user)
+          context.current_user = user
+        else
+          user
+        end
+      end
     end
   end
 
