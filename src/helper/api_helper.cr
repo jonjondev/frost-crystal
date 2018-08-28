@@ -28,7 +28,7 @@ module Frost::ApiHelper
     begin
       context.request.headers[param].to_s
     rescue KeyError
-      puts "Could not find param #{param}"
+      puts "Could not find param #{param}" if ENV["ENV"] != "test"
     end
   end
 

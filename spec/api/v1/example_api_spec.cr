@@ -15,7 +15,6 @@ describe V1::ExampleApi do
     end
     context "when authenticated" do
       if user = User.first
-        # Fix this
         set_auth_header(user)
         get("/api/v1/example")
 
