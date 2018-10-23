@@ -8,7 +8,7 @@ targets:
   frost-crystal:
     main: src/frost-crystal.cr
 
-crystal: 0.25.1
+crystal: 0.26.1
 
 license: MIT
 
