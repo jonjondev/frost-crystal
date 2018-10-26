@@ -22,7 +22,7 @@ class V1::ExampleApi < Toro::Router
       populate_example(example)
       save_example(example)
     else
-      error_message("Example not found")
+      error_message(404, "Example not found")
     end
   end
 
@@ -30,7 +30,7 @@ class V1::ExampleApi < Toro::Router
     if example = load_example
       example.destroy
     else
-      error_message("Example not found")
+      error_message(404, "Example not found")
     end
   end
 
@@ -57,7 +57,7 @@ class V1::ExampleApi < Toro::Router
   end
 
   def save_example(example : Example) : Example | NamedTuple(error: String)
-    example.save ? example : error_message("Can't save example")
+    example.save ? example : error_message(422, "Can't save example")
   end
 
   # Route Definitions
@@ -72,6 +72,6 @@ class V1::ExampleApi < Toro::Router
         delete { json destroy }
       end
     end
-    json(error_message("Missing or invalid auth-token"))
+    json error_message(401, "Missing or invalid auth-token")
   end
 end

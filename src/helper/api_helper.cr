@@ -1,7 +1,7 @@
 module Frost::ApiHelper
-  # Returns a formatted error message as a named tuple
-  def error_message(message : String) : NamedTuple(error: String)
-    {error: message}
+  # Returns a formatted error message as a hash
+  def error_message(code : Int32, message : String) : Hash
+    {"error" => {"code" => code, "message" => message}}
   end
 
   # Gets a param from the path by name

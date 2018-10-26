@@ -28,7 +28,7 @@ class V1::UserApi < Toro::Router
       populate_user(user)
       save_user(user)
     else
-      error_message("User not found")
+      error_message(404, "User not found")
     end
   end
 
@@ -36,7 +36,7 @@ class V1::UserApi < Toro::Router
     if user = load_user
       user.destroy
     else
-      error_message("User not found")
+      error_message(404, "User not found")
     end
   end
 
@@ -65,7 +65,7 @@ class V1::UserApi < Toro::Router
   end
 
   def save_user(user : User) : User | NamedTuple(error: String)
-    user.save ? user : error_message("Can't save user")
+    user.save ? user : error_message(422, "Can't save user")
   end
 
   # Route Definitions
@@ -76,10 +76,10 @@ class V1::UserApi < Toro::Router
         if @current_user.admin?
           json create
         else
-          json(error_message("Insufficent permissions to perform action"))
+          json error_message(403, "Insufficent permissions to perform action")
         end
       else
-        json(error_message("Missing or invalid auth-token"))
+        json error_message(401, "Missing or invalid auth-token")
       end
     end
     on :id do
