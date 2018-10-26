@@ -9,7 +9,7 @@ class V1::SessionApi < Toro::Router
     if user && verify_password?(user, body("password"))
       {auth_token: create_token(user)}
     else
-      {error: "Incorrect email or password"}
+      error_message("Incorrect email or password")
     end
   end
 

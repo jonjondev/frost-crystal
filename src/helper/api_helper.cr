@@ -1,4 +1,9 @@
 module Frost::ApiHelper
+  # Returns a formatted error message as a named tuple
+  def error_message(message : String) : NamedTuple(error: String)
+    {error: message}
+  end
+
   # Gets a param from the path by name
   def param(param : Symbol) : String
     inbox[param]
