@@ -1,7 +1,12 @@
 module Frost::ApiHelper
+  # Returns a formatted success message as a hash
+  def success_message(code : Int32, json_data : JSON::Any::Type) : Hash
+    {"result" => "success", "data" => json_data}
+  end
+
   # Returns a formatted error message as a hash
   def error_message(code : Int32, message : String) : Hash
-    {"error" => {"code" => code, "message" => message}}
+    {"result" => "error", "error" => {"code" => code, "message" => message}}
   end
 
   # Gets a param from the path by name
