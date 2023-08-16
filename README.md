@@ -59,7 +59,7 @@ TODO: Write usage instructions here
 
 ## Contributing
 
-1. Fork it from [here](https://github.com/J-Mo63/frost-crystal/fork)
+1. Fork it from [here](https://github.com/jonjondev/frost-crystal/fork)
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -67,7 +67,7 @@ TODO: Write usage instructions here
 
 ## Contributors
 
-- [J-Mo63](https://github.com/J-Mo63) Jonathan Moallem - creator, maintainer
+- [jonjondev](https://github.com/jonjondev) Jonathan Moallem - creator, maintainer
 
 ## License
 
